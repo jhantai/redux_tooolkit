@@ -4,6 +4,7 @@ import {useDispatch, useSelector} from "react-redux";
 import {setData} from "../../features/data/dataSlice";
 import {useNavigate} from "react-router-dom";
 import {setId} from "../../features/id/idSlice";
+import './CharcterList.css'
 
 const CharacterList = () => {
 
@@ -38,18 +39,30 @@ const CharacterList = () => {
             {isLoading ?
                 <div>Loading...</div>
                 :
+              
                 <>
+             
                     {data.map((item, idx) => {
                         return (
                             <div
                                 key={idx}
                                 onClick={() => toDetail(item.id)}
                             >
+                               <div className='items-map'>
+                                
+                               {item.id}
+                               <div className='second-item-map'>
                                 {item.fullName}
+                                </div>
+                                 <img className='image-charcters'  
+                                 src={item.imageUrl} alt="" />
+                               </div> 
                             </div>
                         )
                     })}
+                    
                 </>
+              
             }
         </div>
     );

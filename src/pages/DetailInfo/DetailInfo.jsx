@@ -7,7 +7,7 @@ import {detailedSlice} from '../../features/data/detailedSlice';
 import './Detailimfo.css'
 
 const DetailInfo = () => {
-    const dispatch = useDispatch
+    const dispatch = useDispatch()
     const data = useSelector((state) => state.data.data)
     const detail = useSelector((state) => state.detail.detail)
     const id = useSelector((state) => state.id.id)
@@ -31,7 +31,7 @@ const DetailInfo = () => {
           return (
             <div>
             {detail &&  
-              <div>
+              <div className='information'>
                 <div>{data.fullName}</div>  
                 <img src={detail.imageUrl} className="heroImg" alt="" />  
                 <div className="desk">  
